@@ -1,0 +1,11 @@
+@RateReel_Backend_HostAddress = http://localhost:5062
+
+GET {{RateReel_Backend_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{RateReel_Backend_HostAddress}}/todos/1
+Accept: application/json
+
+###

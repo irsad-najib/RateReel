@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "z3IWAYThkgY=",
+  "success": true,
+  "projectFilePath": "D:\\belajar progame\\oop\\finpro\\RateReel-Backend\\RateReel-Backend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\8.0.10\\microsoft.dotnet.ilcompiler.8.0.10.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.10\\microsoft.net.illink.tasks.8.0.10.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.10\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

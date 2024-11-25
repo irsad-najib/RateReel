@@ -1,0 +1,5 @@
+D:\belajar progame\oop\finpro\RateReel-Backend\obj\Debug\net8.0\RateReel-Backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\belajar progame\oop\finpro\RateReel-Backend\obj\Debug\net8.0\RateReel-Backend.AssemblyInfoInputs.cache
+D:\belajar progame\oop\finpro\RateReel-Backend\obj\Debug\net8.0\RateReel-Backend.AssemblyInfo.cs
+D:\belajar progame\oop\finpro\RateReel-Backend\obj\Debug\net8.0\RateReel-Backend.csproj.CoreCompileInputs.cache
+D:\belajar progame\oop\finpro\RateReel-Backend\obj\Debug\net8.0\RateReel-Backend.MvcApplicationPartsAssemblyInfo.cache
