@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/vinn/RateReel/RateReel/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Entitlements.xcent /Users/vinn/RateReel/RateReel/bin/Debug/net8.0-maccatalyst/maccatalyst-x64/RateReel.app
