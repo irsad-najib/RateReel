@@ -4,7 +4,7 @@
              x:Class="RateReel.App">
     <Application.Resources>
         <ResourceDictionary>
-            <!-- Base Colors -->
+            <!-- Base Colorss -->
             <Color x:Key="PrimaryBackground">#14181C</Color>
             <Color x:Key="LightBackground">#FFFFFF</Color>
             <Color x:Key="DarkBackground">#14181C</Color>
