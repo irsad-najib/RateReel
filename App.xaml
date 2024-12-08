@@ -1,0 +1,64 @@
+﻿<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:converters="clr-namespace:RateReel.Converters"
+             x:Class="RateReel.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Base Colors -->
+            <Color x:Key="PrimaryBackground">#14181C</Color>
+            <Color x:Key="LightBackground">#FFFFFF</Color>
+            <Color x:Key="DarkBackground">#14181C</Color>
+            <Color x:Key="DarkTextColor">White</Color>
+            <Color x:Key="LightTextColor">#1A1A1A</Color>
+            
+            <!-- Search and Frame Colors -->
+            <Color x:Key="DarkSearchBackground">#2C3440</Color>
+            <Color x:Key="LightSearchBackground">#F0F2F5</Color>
+            <Color x:Key="DarkFrameBackground">#1B2228</Color>
+            <Color x:Key="LightFrameBackground">#FFFFFF</Color>
+
+            <converters:RatingToStarsConverter x:Key="RatingToStarsConverter"/>
+
+            
+            
+          <!-- Text Colors -->
+<Color x:Key="PlaceholderTextDark">#99AABB</Color>
+<Color x:Key="PlaceholderTextLight">#8E8E93</Color>
+<Color x:Key="SubtleGray">#E5E7EB</Color>
+
+<!-- Updated Accent Color to Grey -->
+<Color x:Key="AccentColor">#757575</Color> <!-- Clean neutral grey -->
+         
+
+            <!-- Global Theme Resources -->
+            <Style TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}" />
+            </Style>
+
+            <Style x:Key="ModernFlyoutItem" TargetType="FlyoutItem">
+            <Setter Property="Shell.PresentationMode" Value="ModalAnimated"/>
+            <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
+            <Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+            <Setter Property="Shell.TabBarIsVisible" Value="True"/>
+    </Style>
+
+     <Style TargetType="SearchBar">
+    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}" />
+    <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}" />
+    <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}" />
+    <Setter Property="Shadow">
+        <Shadow Brush="Transparent"
+                Opacity="0"
+                Radius="0"
+                Offset="0,0"/>
+    </Setter>
+</Style>
+
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

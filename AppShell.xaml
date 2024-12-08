@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:RateReel.Pages.Homepage"
+       xmlns:auth="clr-namespace:RateReel.Pages.Authentication"
+       x:Class="RateReel.AppShell"
+       BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"
+       TabBarForegroundColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+       TabBarUnselectedColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+       Shell.TabBarIsVisible="True"
+       Shell.NavBarIsVisible="True"
+       FlyoutBehavior="Flyout">
+
+    <!-- Flyout Header -->
+    <Shell.FlyoutHeader>
+        <Grid 
+            BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+            <Label Text="RateReel"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Padding="10"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Login ShellContent -->
+    <ShellContent
+        Route="Login"
+        ContentTemplate="{DataTemplate auth:LoginPage}"
+        Shell.NavBarIsVisible="False"
+        Shell.TabBarIsVisible="False" />
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="44,*,44">
+            <BoxView Grid.Column="0"/>
+            <Label Grid.Column="1"
+                   Text="RateReel"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="-44,0,0,0"/>
+            <BoxView Grid.Column="2"/>
+        </Grid>
+    </Shell.TitleView>
+
+    <!-- TabBar with Icons -->
+    <TabBar x:Name="TabBar">
+        <Tab Title="Home" Icon="themehomes_6969.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Homepage}" Route="Home"/>
+        </Tab>
+
+        <Tab Title="Timeline" Icon="timelines_6969.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Timeline}" Route="Timeline"/>
+        </Tab>
+
+        <Tab Title="Films" Icon="films_6969.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Films}" Route="Films"/>
+        </Tab>
+    </TabBar>
+
+    <!-- FlyoutItems -->
+    <FlyoutItem Title="Settings" Style="{StaticResource ModernFlyoutItem}">
+        <ShellContent ContentTemplate="{DataTemplate pages:Settings}" Route="Settings"/>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="Account" Style="{StaticResource ModernFlyoutItem}">
+        <ShellContent ContentTemplate="{DataTemplate pages:Account}" Route="Account"/>
+    </FlyoutItem>
+
+   
+</Shell>

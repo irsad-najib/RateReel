@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:RateReel.Models"
+             x:Class="RateReel.Pages.Homepage.Timeline"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="20">
+            <Label Text="Timeline"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                   FontSize="24"
+                   Margin="0,10,0,20"/>
+
+            <!-- Reviews CollectionView -->
+            <CollectionView ItemsSource="{Binding Reviews}"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Review">
+                        <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                               CornerRadius="12" HasShadow="False" BorderColor="Transparent">
+                            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*" Padding="12" RowSpacing="12">
+                                <Frame Grid.RowSpan="3" HeightRequest="150" WidthRequest="100" Padding="0" CornerRadius="10">
+                                    <Image Source="{Binding PosterUrl}" Aspect="AspectFill"/>
+                                </Frame>
+                                <HorizontalStackLayout Grid.Column="1" Spacing="8" Margin="15,0,0,0">
+                                    <Label Text="{Binding Username}" FontAttributes="Bold"
+                                           TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+                                    <Label Text="•"/>
+                                    <Label Text="Just now" TextColor="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"/>
+                                </HorizontalStackLayout>
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="1" Margin="15,0,0,0" Spacing="4">
+                                    <Label Text="{Binding MovieTitle}" FontSize="18" FontAttributes="Bold"
+                                           TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+
+                                    <!-- Star Rating and Numeric Rating -->
+                                    <HorizontalStackLayout Spacing="5">
+                                        <Label Text="{Binding Rating, Converter={StaticResource RatingToStarsConverter}}" 
+                                               TextColor="#FFD700" FontSize="16"/>
+                                        <Label Text="{Binding Rating, StringFormat='({0:F1})'}" 
+                                               TextColor="#FFD700" FontSize="16"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                                <Label Grid.Row="2" Grid.Column="1" Margin="15,0,0,0"
+                                       Text="{Binding ReviewText}"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

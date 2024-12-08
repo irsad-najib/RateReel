@@ -1,0 +1,35 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RateReel.Pages.Homepage.About"
+             Title="About">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+
+            <!-- Title -->
+            <Label Text="Welcome to Ratereel"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+
+            <!-- Body Text -->
+            <Label Text="We are a team of three students from the Information Technology program at UGM: Melvino, Irsad, and Yosa. This app was created as part of our final project for the Object-Oriented Programming (OOP) course. Our goal was to develop a user-friendly platform for movie enthusiasts to rate and share their thoughts on the films they watch."
+                   FontSize="16"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Center" />
+
+            <Label Text="Ratereel is inspired by platforms like Letterboxd, allowing users to rate movies, create watchlists, and discover recommendations based on ratings from other users. Built with C# and OOP principles, we focused on delivering a well-structured and intuitive user experience."
+                   FontSize="16"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Center" />
+
+            <Label Text="We hope that the development of this app, based on C# and implementing OOP principles, will help us successfully complete and pass the Object-Oriented Programming (OOP) course. Thank you."
+                   FontSize="16"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   VerticalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

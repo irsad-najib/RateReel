@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:RateReel.Models"
+             x:Class="RateReel.Pages.Homepage.Films"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"
+             Title="Films">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="20">
+            <!-- Header 
+            <Label Text="Films"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,20"/>
+              -->     
+            
+            <!-- Search Bar -->
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                   CornerRadius="8"
+                   Padding="0"
+                   HasShadow="False"
+                   Margin="0,0,0,10">
+                <SearchBar x:Name="FilmSearchBar"
+                          Placeholder="Search films..."
+                          TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                          PlaceholderColor="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"
+                          CancelButtonColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                          HorizontalOptions="Fill"
+                          VerticalOptions="Center"
+                          TextChanged="OnSearchBarTextChanged"/>
+            </Frame>
+
+            <!-- Films CollectionView -->
+          <CollectionView x:Name="FilmsCollectionView"
+                ItemsSource="{Binding FilmsCollection}"
+                SelectionMode="Single"
+                SelectionChanged="OnFilmSelected">
+    <CollectionView.ItemTemplate>
+        <DataTemplate x:DataType="models:Film">
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                   CornerRadius="10"
+                   HasShadow="False"
+                   Padding="0"
+                   Margin="0,0,0,15">
+                <Grid RowDefinitions="160,Auto,Auto">
+                    <Image Source="{Binding PosterUrl}"
+                           Aspect="AspectFill"
+                           HeightRequest="160"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                    <VerticalStackLayout Grid.Row="1" Padding="10" Spacing="5">
+                        <Label Text="{Binding Title}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                               FontAttributes="Bold"/>
+                        <Label Text="{Binding Year}"
+                               TextColor="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"
+                               FontSize="14"/>
+                        <Label Text="{Binding Rating}"
+                               TextColor="#FFD700"/>
+                    </VerticalStackLayout>
+                </Grid>
+            </Frame>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+    <CollectionView.ItemsLayout>
+        <GridItemsLayout Orientation="Vertical" Span="2" />
+    </CollectionView.ItemsLayout>
+</CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

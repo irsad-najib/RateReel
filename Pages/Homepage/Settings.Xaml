@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RateReel.Pages.Homepage.Settings"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="20">
+            <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                   CornerRadius="8"
+                   HasShadow="False"
+                   Padding="15">
+                
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="20">
+    <!-- Theme Toggle -->
+    <Grid ColumnDefinitions="*,Auto" Grid.Row="0">
+        <Label Text="Dark Mode"
+               VerticalOptions="Center"/>
+        <Switch Grid.Column="1"
+                IsToggled="{Binding IsDarkMode}"
+                Toggled="OnThemeToggled"
+                OnColor="#00E054"/>
+    </Grid>
+
+    <!-- Notifications -->
+    <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
+        <Label Text="Notifications"
+               VerticalOptions="Center"/>
+        <Switch Grid.Column="1"
+                IsToggled="{Binding NotificationsEnabled}"
+                OnColor="#00E054"/>
+    </Grid>
+
+    <!-- About -->
+    <Button Grid.Row="2"
+            Text="About RateReel"
+            BackgroundColor="Transparent"
+            TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+            HorizontalOptions="Start"
+            Padding="0"
+            Margin="0,0,0,5"
+            Clicked= "OnBackAboutClicked"/>
+
+    <!-- Back to Home -->
+    <Button Grid.Row="3"
+            Text="Back to Home"
+            BackgroundColor="Transparent"
+            TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+            HorizontalOptions="Start"
+            Padding="0"
+            Margin="0,0,0,0"
+            Clicked="OnBackToHomeClicked"/>
+</Grid>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>   
+</ContentPage>

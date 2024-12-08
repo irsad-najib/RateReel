@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:selectors="clr-namespace:RateReel.Selectors"
+             xmlns:models="clr-namespace:RateReel.Models"
+             x:Class="RateReel.Pages.Authentication.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Intro Slide -->
+            <DataTemplate x:Key="IntroTemplate">
+                <ContentView>
+                    <StackLayout Padding="20" VerticalOptions="Center">
+                        <Label Text="{Binding Message}"
+                               HorizontalOptions="Center"
+                               FontSize="Large"
+                               TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+                    </StackLayout>
+                </ContentView>
+            </DataTemplate>
+
+            <!-- Invitation Slide -->
+            <DataTemplate x:Key="InvitationTemplate">
+                <ContentView>
+                    <StackLayout Padding="20" VerticalOptions="Center">
+                        <Label Text="{Binding Message}"
+                               HorizontalOptions="Center"
+                               FontSize="Medium"
+                               TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+                    </StackLayout>
+                </ContentView>
+            </DataTemplate>
+
+            <!-- Login Slide -->
+            <DataTemplate x:Key="LoginTemplate">
+                <ContentView>
+                    <Grid>
+                        <!-- Background Image -->
+                        <Image Source="background.png"
+                               Aspect="AspectFill"
+                               Opacity="0.3"
+                               IsVisible="{AppThemeBinding Light=true, Dark=false}" />
+
+                        <!-- Scrollable Login/Register Form -->
+                        <ScrollView>
+                            <VerticalStackLayout Spacing="30" Padding="20" VerticalOptions="StartAndExpand">
+
+                                <Image Source="appicon.png"
+                                       HeightRequest="100"
+                                       HorizontalOptions="Center" />
+
+                                <Label Text="RateReel"
+                                       FontSize="28"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+
+                                <!-- Username Entry -->
+                                <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                           CornerRadius="10"
+                           Padding="10"
+                           HasShadow="True">
+                        <Entry x:Name="UsernameEntry"
+                               Placeholder="Username"
+                               Text="{Binding Username, Mode=TwoWay, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                               PlaceholderColor="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"
+                               BackgroundColor="Transparent"/>
+                    </Frame>
+
+                                <!-- Password Entry -->
+                                <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                           CornerRadius="10"
+                           Padding="10"
+                           HasShadow="True">
+                        <Entry x:Name="PasswordEntry"
+                               Placeholder="Password"
+                               IsPassword="True"
+                               Text="{Binding Password, Mode=TwoWay, Source={RelativeSource AncestorType={x:Type ContentPage}}}"
+                               TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                               PlaceholderColor="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"
+                               BackgroundColor="Transparent"/>
+                    </Frame>
+
+                                <!-- Login Button -->
+                                <Button Text="Login"
+                                        Clicked="OnLoginClicked"
+                                        BackgroundColor="{StaticResource AccentColor}"
+                                        TextColor="White"
+                                        CornerRadius="10"
+                                        HeightRequest="50"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="FillAndExpand"/>
+
+                                <!-- Register Label -->
+                                <Label Text="Don't have an account? Register"
+                                       FontSize="14"
+                                       HorizontalOptions="Center"
+                                       TextColor="{StaticResource AccentColor}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnRegisterTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </VerticalStackLayout>
+                        </ScrollView>
+                    </Grid>
+                </ContentView>
+            </DataTemplate>
+
+            <!-- SlideDataTemplateSelector -->
+            <selectors:SlideDataTemplateSelector x:Key="SlideTemplateSelector"
+                                                 IntroTemplate="{StaticResource IntroTemplate}"
+                                                 InvitationTemplate="{StaticResource InvitationTemplate}"
+                                                 LoginTemplate="{StaticResource LoginTemplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <!-- CarouselView with IndicatorView -->
+        <CarouselView ItemsSource="{Binding Slides}"
+                      ItemTemplate="{StaticResource SlideTemplateSelector}"
+                      IndicatorView="indicator"
+                      VerticalOptions="FillAndExpand"
+                      PositionChanged="CarouselView_PositionChanged">
+        </CarouselView>
+
+        <!-- IndicatorView for CarouselView -->
+        <IndicatorView x:Name="indicator"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"
+                       Margin="0,0,0,20"/>
+    </Grid>
+
+</ContentPage>

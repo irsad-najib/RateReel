@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:RateReel.Models"
+             x:Class="RateReel.Pages.Homepage.Homepage"
+             Title="Homepage">
+
+    <!-- Use a Grid layout to allow the CollectionView to expand and scroll -->
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- Search Bar -->
+        <SearchBar Grid.Row="0"
+                   Placeholder="Search films..."
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                   PlaceholderColor="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"
+                   CancelButtonColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Center"
+                   TextChanged="OnSearchTextChanged"/>
+
+        <!-- CollectionView for Films -->
+        <CollectionView Grid.Row="1"
+                        x:Name="FilmsCollectionView"
+                        ItemsSource="{Binding FilteredMovies}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnFilmSelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Film">
+                    <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                           CornerRadius="10"
+                           HasShadow="False"
+                           Padding="0"
+                           Margin="0,0,0,15">
+                        <HorizontalStackLayout>
+                            <Image Source="{Binding PosterUrl}"
+                                   WidthRequest="100"
+                                   HeightRequest="150"
+                                   Aspect="AspectFill"/>
+                            <VerticalStackLayout Padding="10,0">
+                                <Label Text="{Binding Title}"
+                                       FontAttributes="Bold"
+                                       FontSize="16"/>
+                                <Label Text="{Binding Year}"
+                                       FontSize="14"
+                                       TextColor="Gray"/>
+                                <Label Text="{Binding Rating}"
+                                       FontSize="14"
+                                       TextColor="Gold"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+            <!-- Adjust the ItemsLayout -->
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+
+        </CollectionView>
+
+        <!-- Recent Reviews Section -->
+        <StackLayout Grid.Row="2" Padding="10">
+            <Label Text="Recent Reviews"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,10"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+
+            <CollectionView ItemsSource="{Binding RecentReviews}"
+                            SelectionMode="None"
+                             HeightRequest="300"> 
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Review">
+                        <Frame BackgroundColor="{AppThemeBinding Light={StaticResource LightSearchBackground}, Dark={StaticResource DarkSearchBackground}}"
+                               CornerRadius="10"
+                               HasShadow="False"
+                               Padding="10"
+                               Margin="0,0,0,10">
+                            <StackLayout>
+                                <Label Text="{Binding Username}"
+                                       FontAttributes="Bold"
+                                       FontSize="16"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+                                <Label Text="{Binding MovieTitle}"
+                                       FontSize="14"
+                                       TextColor="Gray"/>
+                                <Label Text="{Binding ReviewText}"
+                                       FontSize="14"
+                                       TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+                                <Label Text="{Binding ReviewDate, StringFormat='Reviewed on {0:MM/dd/yyyy HH:mm}'}"
+                                       FontSize="12"
+                                       TextColor="{AppThemeBinding Light={StaticResource PlaceholderTextLight}, Dark={StaticResource PlaceholderTextDark}}"/>
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

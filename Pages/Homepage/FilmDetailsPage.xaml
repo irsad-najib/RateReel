@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RateReel.Pages.Homepage.FilmDetailsPage"
+             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15"  BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
+            <!-- Existing Film Details -->
+            <Image x:Name="PosterImage"
+                   HeightRequest="650"
+                   WidthRequest="650" 
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Label x:Name="TitleLabel"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+            
+            <Label x:Name="YearLabel"
+                   FontSize="16"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+            <Label x:Name="RatingLabel"
+                   FontSize="16"
+                   TextColor="#FFD700"/>
+            <Label x:Name="DescriptionLabel"
+                   FontSize="14"
+                   LineHeight="1.5"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"/>
+
+            <!-- Review Section -->
+            <Label Text="Review Now"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"
+                   TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                   Margin="0,20,0,10"/>
+
+            <!-- Rating Slider -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Rating:"
+                       TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                       VerticalOptions="Center"/>
+                <Slider x:Name="RatingSlider"
+                        Minimum="1"
+                        Maximum="5"
+                        Value="3"
+                        WidthRequest="200"
+                        VerticalOptions="Center"/>
+                <Label Text="{Binding Source={x:Reference RatingSlider}, Path=Value, StringFormat=' {0:F0}'}"
+                       TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                       VerticalOptions="Center"/>
+            </StackLayout>
+
+            <!-- Review Text Editor -->
+            <Editor x:Name="ReviewEditor"
+                    Placeholder="Write your review here..."
+                    BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"
+                    TextColor="{AppThemeBinding Light={StaticResource LightTextColor}, Dark={StaticResource DarkTextColor}}"
+                    PlaceholderColor="{AppThemeBinding Light=Gray, Dark=Gray}"
+                    HeightRequest="100"/>
+
+            <!-- Submit Review Button -->
+            <Button Text="Submit Review"
+                    Clicked="OnSubmitReviewClicked"
+                    BackgroundColor="#00E054"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="45"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
