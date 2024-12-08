@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vinn/Desktop/RateReel copy 10/RateReel.csproj": {}
+    "/Users/vinn/Desktop/RateReel FIXED/RateReel.csproj": {}
   },
   "projects": {
-    "/Users/vinn/Desktop/RateReel copy 10/RateReel.csproj": {
+    "/Users/vinn/Desktop/RateReel FIXED/RateReel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vinn/Desktop/RateReel copy 10/RateReel.csproj",
+        "projectUniqueName": "/Users/vinn/Desktop/RateReel FIXED/RateReel.csproj",
         "projectName": "RateReel",
-        "projectPath": "/Users/vinn/Desktop/RateReel copy 10/RateReel.csproj",
+        "projectPath": "/Users/vinn/Desktop/RateReel FIXED/RateReel.csproj",
         "packagesPath": "/Users/vinn/.nuget/packages/",
-        "outputPath": "/Users/vinn/Desktop/RateReel copy 10/obj/",
+        "outputPath": "/Users/vinn/Desktop/RateReel FIXED/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [

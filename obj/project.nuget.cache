@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ekm5eEjgTKY=",
+  "dgSpecHash": "QMfniGF6weI=",
   "success": true,
-  "projectFilePath": "/Users/vinn/Desktop/RateReel copy 10/RateReel.csproj",
+  "projectFilePath": "/Users/vinn/Desktop/RateReel FIXED/RateReel.csproj",
   "expectedPackageFiles": [
     "/Users/vinn/.nuget/packages/communitytoolkit.maui/9.1.1/communitytoolkit.maui.9.1.1.nupkg.sha512",
     "/Users/vinn/.nuget/packages/communitytoolkit.maui.core/9.1.1/communitytoolkit.maui.core.9.1.1.nupkg.sha512",
