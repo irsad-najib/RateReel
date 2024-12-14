@@ -1,4 +1,3 @@
-// Films.xaml.cs
 using System;
 using System.Collections.ObjectModel;
 using Microsoft.Maui.Controls;
@@ -17,7 +16,7 @@ namespace RateReel.Pages.Homepage
 
         public ObservableCollection<Review> Reviews => App.Reviews;
 
-        private readonly TmdbService _tmdbService;
+        private readonly TmdbService? _tmdbService;
 
         public Films()
         {
@@ -26,7 +25,8 @@ namespace RateReel.Pages.Homepage
             FilteredMovies = new ObservableCollection<Film>();
 
             // Retrieve TmdbService from the service provider
-            _tmdbService = App.ServiceProvider.GetService<TmdbService>();
+            _tmdbService = App.ServiceProvider.GetService<TmdbService>()
+                ?? throw new InvalidOperationException("TmdbService must be registered");
 
             BindingContext = this;
             FilmsCollectionView.ItemsSource = FilteredMovies;

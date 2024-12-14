@@ -13,7 +13,7 @@
 
     <!-- Flyout Header -->
     <Shell.FlyoutHeader>
-        <Grid 
+        <Grid
             BackgroundColor="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}">
             <Label Text="RateReel"
                    FontSize="24"
@@ -30,7 +30,7 @@
         Route="Login"
         ContentTemplate="{DataTemplate auth:LoginPage}"
         Shell.NavBarIsVisible="False"
-        Shell.TabBarIsVisible="False" />
+        Shell.TabBarIsVisible="False"/>
 
     <Shell.TitleView>
         <Grid ColumnDefinitions="44,*,44">
@@ -50,27 +50,39 @@
 
     <!-- TabBar with Icons -->
     <TabBar x:Name="TabBar">
-        <Tab Title="Home" Icon="themehomes_6969.png">
-            <ShellContent ContentTemplate="{DataTemplate pages:Homepage}" Route="Home"/>
+        <Tab Title="Home"
+             Icon="themehomes_6969.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Homepage}"
+                          Route="Home"/>
         </Tab>
 
-        <Tab Title="Timeline" Icon="timelines_6969.png">
-            <ShellContent ContentTemplate="{DataTemplate pages:Timeline}" Route="Timeline"/>
+        <Tab Title="Timeline"
+             Icon="timelines_6969.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Timeline}"
+                          Route="Timeline"/>
         </Tab>
 
-        <Tab Title="Films" Icon="films_6969.png">
-            <ShellContent ContentTemplate="{DataTemplate pages:Films}" Route="Films"/>
+        <Tab Title="Films"
+             Icon="films_6969.png">
+            <ShellContent ContentTemplate="{DataTemplate pages:Films}"
+                          Route="Films"/>
         </Tab>
     </TabBar>
 
     <!-- FlyoutItems -->
-    <FlyoutItem Title="Settings" Style="{StaticResource ModernFlyoutItem}">
-        <ShellContent ContentTemplate="{DataTemplate pages:Settings}" Route="Settings"/>
-    </FlyoutItem>
-    
-    <FlyoutItem Title="Account" Style="{StaticResource ModernFlyoutItem}">
-        <ShellContent ContentTemplate="{DataTemplate pages:Account}" Route="Account"/>
+    <FlyoutItem Title="Settings"
+                Style="{StaticResource ModernFlyoutItem}">
+        <ShellContent ContentTemplate="{DataTemplate pages:Settings}"
+                      Route="Settings"/>
     </FlyoutItem>
 
-   
+    <FlyoutItem Title="Account"
+                Style="{StaticResource ModernFlyoutItem}">
+        <ShellContent ContentTemplate="{DataTemplate pages:Account}"
+                      Route="Account"/>
+    </FlyoutItem>
+
+    <!-- Register EditProfilePage -->
+
+
 </Shell>

@@ -1,14 +1,21 @@
 using Microsoft.Maui.Controls;
 using RateReel.Models;
+using RateReel.Services;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System;
+using System.Threading.Tasks;
+using MongoDB.Driver; // Added using directive
 
 namespace RateReel.Pages.Authentication
 {
     public partial class LoginPage : ContentPage, INotifyPropertyChanged
     {
+        private readonly MongoDbContext _mongoDbContext;
         private string _username = string.Empty;
+        private string _password = string.Empty;
+
         public string Username
         {
             get => _username;
@@ -22,7 +29,6 @@ namespace RateReel.Pages.Authentication
             }
         }
 
-        private string _password = string.Empty;
         public string Password
         {
             get => _password;
@@ -41,20 +47,21 @@ namespace RateReel.Pages.Authentication
         public LoginPage()
         {
             InitializeComponent();
+            _mongoDbContext = App.ServiceProvider.GetService<MongoDbContext>();
 
             // Initialize Slides with three unique slides
             Slides = new List<SlideModel>
             {
-               new SlideModel
-{
-    Type = SlideType.Intro,
-    Message = "Discover a world of movies! Get honest reviews before making your next watch choice."
-},
-new SlideModel
-{
-    Type = SlideType.Intro,
-    Message = "Join the community! Swipe left to sign up and start sharing your reviews."
-},
+                new SlideModel
+                {
+                    Type = SlideType.Intro,
+                    Message = "Discover a world of movies! Get honest reviews before making your next watch choice."
+                },
+                new SlideModel
+                {
+                    Type = SlideType.Intro,
+                    Message = "Join the community! Swipe left to sign up and start sharing your reviews."
+                },
                 new SlideModel
                 {
                     Type = SlideType.Login
@@ -95,8 +102,13 @@ new SlideModel
                 }
 
                 // Replace with actual authentication logic
-                if (username.ToLower() == "user" && password == "password")
+                var user = await _mongoDbContext.Users.Find(u => u.Username == username).FirstOrDefaultAsync();
+                if (user != null && PasswordHasher.VerifyPassword(password, user.Password))
                 {
+                    // Set the LoggedInUsername
+                    App.LoggedInUsername = username;
+                    System.Diagnostics.Debug.WriteLine($"LoggedInUsername set to: {App.LoggedInUsername}");
+
                     // Enable Flyout and navigation bars after successful login
                     Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
                     Shell.SetNavBarIsVisible(Shell.Current, true);

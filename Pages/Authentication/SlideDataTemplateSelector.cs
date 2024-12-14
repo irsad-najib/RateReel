@@ -1,4 +1,3 @@
-// SlideDataTemplateSelector.cs
 using Microsoft.Maui.Controls;
 using RateReel.Models;
 

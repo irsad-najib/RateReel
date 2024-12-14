@@ -1,0 +1,104 @@
+is_global = true
+build_property.TargetFramework = net8.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RateReel
+build_property.ProjectDir = D:\belajar progame\oop\RateReel copy\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTAotWarningLevel = 
+
+[D:/belajar progame/oop/RateReel copy/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/belajar progame/oop/RateReel copy/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/belajar progame/oop/RateReel copy/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Authentication/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Authentication.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Authentication\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Authentication\LoginPage.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Authentication/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Authentication.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Authentication\RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Authentication\RegisterPage.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Homepage/About.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Homepage.About.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Homepage\About.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Homepage\About.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Homepage/Account.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Homepage.Account.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Homepage\Account.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Homepage\Account.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Homepage/FilmDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Homepage.FilmDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Homepage\FilmDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Homepage\FilmDetailsPage.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Homepage/Films.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Homepage.Films.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Homepage\Films.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Homepage\Films.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Homepage/Homepage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Homepage.Homepage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Homepage\Homepage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Homepage\Homepage.xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Homepage/Settings.Xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Homepage.Settings.Xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Homepage\Settings.Xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Homepage\Settings.Xaml
+
+[D:/belajar progame/oop/RateReel copy/Pages/Homepage/Timeline.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Pages.Homepage.Timeline.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Homepage\Timeline.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Homepage\Timeline.xaml
+
+[D:/belajar progame/oop/RateReel copy/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/belajar progame/oop/RateReel copy/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = RateReel.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

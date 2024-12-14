@@ -1,5 +1,9 @@
 ﻿using Microsoft.Maui.Controls;
-using System;
+using RateReel.Pages.Authentication;
+using RateReel.Pages.Homepage;
+using RateReel.Services;
+using Backend.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace RateReel
 {
@@ -15,13 +19,11 @@ namespace RateReel
                 try
                 {
                     System.Diagnostics.Debug.WriteLine("Starting initial navigation...");
-                    
-                    // Disable navigation features for login
+
                     FlyoutBehavior = FlyoutBehavior.Disabled;
                     Shell.SetNavBarIsVisible(Shell.Current, false);
                     Shell.SetTabBarIsVisible(Shell.Current, false);
 
-                    // Navigate to login using consistent path
                     await Shell.Current.GoToAsync("//Login");
                     System.Diagnostics.Debug.WriteLine("Navigated to Login page");
                 }
@@ -38,16 +40,16 @@ namespace RateReel
             try
             {
                 System.Diagnostics.Debug.WriteLine("Registering routes...");
-                
-                // Use consistent route format without triple slashes
-                Routing.RegisterRoute("Login", typeof(Pages.Authentication.LoginPage));
-                Routing.RegisterRoute("Register", typeof(Pages.Authentication.RegisterPage));
-                Routing.RegisterRoute("Home", typeof(Pages.Homepage.Homepage));
-                Routing.RegisterRoute("Timeline", typeof(Pages.Homepage.Timeline));
-                Routing.RegisterRoute("Films", typeof(Pages.Homepage.Films));
-                Routing.RegisterRoute("Settings", typeof(Pages.Homepage.Settings));
-                Routing.RegisterRoute("Account", typeof(Pages.Homepage.Account));
-                
+
+                Routing.RegisterRoute("Login", typeof(LoginPage));
+                Routing.RegisterRoute("Register", typeof(RegisterPage));
+                Routing.RegisterRoute("Home", typeof(Homepage));
+                Routing.RegisterRoute("Timeline", typeof(Timeline));
+                Routing.RegisterRoute("Films", typeof(Films));
+                Routing.RegisterRoute("Settings", typeof(Settings));
+                Routing.RegisterRoute("Account", typeof(Account));
+
+
                 System.Diagnostics.Debug.WriteLine("Routes registered successfully");
             }
             catch (Exception ex)

@@ -41,6 +41,8 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+		<MauiAsset Include="appsettings.json" />
+		<MauiAsset Include="Configuration/appsettings.json" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -64,6 +66,8 @@
 		<MauiImage Include="Resources\Images\mov3.jpg" BaseSize="300,185" />
 		<MauiImage Include="Resources\Images\mov4.jpg" BaseSize="300,185" />
 		<MauiImage Include="Resources\Images\mov5.jpg" BaseSize="300,185" />
+		<MauiImage Include="Resources\Images\default_avatar.png" BaseSize="300,185" />
+
 
 
 		<!-- Custom Fonts -->
@@ -74,12 +78,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="9.0.0" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.3.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="MongoDB.Driver" Version="3.1.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
 	</ItemGroup>
 	
 
